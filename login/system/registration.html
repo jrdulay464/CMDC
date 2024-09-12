@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url("logo/BG.jpg");
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            width: 80%;
+            height: 80%;
+            max-width: 900px;
+            max-height: 900px; 
+            background-color: lightblue;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            color: #333;
+            margin-top: 0;
+        }
+
+        .form-group {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            flex: 1;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .form-group input {
+            flex: 2;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .form-group .half {
+            flex: 1;
+            margin-right: 10px;
+        }
+
+        .form-group .half:last-child {
+            margin-right: 0;
+        }
+
+        .form-group .small {
+            flex: 1;
+            margin-right: 10px;
+            max-width: 300px; 
+        }
+
+        .form-group .small:last-child {
+            margin-right: 0;
+        }
+
+        .user-type {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .user-type label {
+            margin-right: 20px;
+        }
+
+        .side-by-side {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        input[type="submit"] {
+            background-color: #2980b9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto 0;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2471a3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>User Registration</h2>
+        <form action="register.php" method="post">
+            <div class="form-group">
+                <div class="half">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="half">
+                    <label for="middleName">Middle Name:</label>
+                    <input type="text" id="middleName" name="middleName">
+                </div>
+                <div class="half">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="half">
+                    <label for="suffix">Suffix:</label>
+                    <input type="text" id="suffix" name="suffix">
+                </div>
+                <div class="half">
+                    <label for="phone">Phone Number:</label>
+                    <input type="text" id="phone" name="phone">
+                </div>
+                <div class="half">
+                    <label for="course">Course:</label>
+                    <input type="text" id="course" name="course">
+                </div>
+            </div>
+            <div class="form-group side-by-side">
+                <div class="small">
+                    <label for="studentID">Student ID (serves as username):</label>
+                    <input type="text" id="studentID" name="studentID" required>
+                </div>
+                <div class="small">
+                    <label for="pword">Password:</label>
+                    <input type="password" id="pword" name="pword" required>
+                </div>
+                <div class="small">
+                    <label for="confirmPword">Confirm Password:</label>
+                    <input type="password" id="confirmPword" name="confirmPword" required>
+                </div>
+            </div>
+            <div class="user-type">
+                <label>User Type:</label><br>
+                <input type="radio" id="instructor" name="userType" value="instructor">
+                <label for="instructor">Instructor</label>
+                <input type="radio" id="student" name="userType" value="student" checked>
+                <label for="student">Student</label>
+            </div>
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
